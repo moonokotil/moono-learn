@@ -1,0 +1,23 @@
+import streamlit as st  # type: ignore
+
+#Title for website
+st.title("Welcome to Moonosite")
+
+#Header and subheader
+st.subheader("Moono is the coolest person in the world!")
+st.write("I learn how to code")
+
+#Create Form
+with st.form(key="my_form"):
+    name = st.text_input("What's your name?*")
+    what = st.radio("Are you an artist?", ("Yuhuh", "Nuhuh"))
+    submit_button = st.form_submit_button(label="Okky!")
+#Process form data only when submitted
+if submit_button:
+    if not name.strip():
+        st.error("TELL YOUR NAME!!")
+    else:
+        st.success(f"Yippie! you did it. Don't forget to touch a gras, {name}!")
+
+
+
